@@ -1,0 +1,134 @@
+/* !Modal açıldığında görsel bir fade-in efekti için keyframe tanımı */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-wrapperr {
+  background-color: rgba(128, 128, 128, 0.51);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  /* !Fade-in animasyonunu uygulayın */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.modall {
+  background-color: white;
+  padding: 70px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* !Gölge eklendi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* !Yukarıdan aşağıya kayma efekti */
+  animation: slideDown 0.5s ease-in-out;
+
+  animation: shockEffect 1s ease-in-out;
+}
+
+/* !Slide-down efekti için keyframe tanımı */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* !Kitap kartlarının hover durumunda büyüme efekti */
+.d-flex > .border:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+/* !Döndürme animasyonu keyframe tanımı */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.d-flex > .border:hover {
+  /* !Hover sırasında döndürme animasyonu ekler */
+  animation: rotate 1s ease-in-out;
+}
+
+/* Butonlar için isteğe bağlı döndürme efekti */
+.btn:hover {
+  /* !Hover sırasında hafif bir döndürme ve büyüme efekti ekler */
+  transform: scale(1.05) rotate(10deg);
+  transition: transform 0.3s ease;
+}
+
+@keyframes shockEffect {
+  0% {
+    background-color: white;
+    transform: scale(1);
+  }
+  25% {
+    background-color: rgb(138, 78, 173);
+    transform: scale(1.05);
+  }
+  50% {
+    background-color: rgb(130, 170, 216);
+    transform: scale(0.95);
+  }
+  75% {
+    background-color: rgb(137, 151, 163);
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: rgb(226, 132, 221);
+    transform: scale(1);
+  }
+}
+
+.btn-warning {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-warning::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.6s ease-in-out;
+  z-index: 0;
+  opacity: 0;
+}
+
+.btn-warning:hover::after {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+}
+
+.btn-warning:hover {
+  background-color: #d98323;
+  color: white;
+}

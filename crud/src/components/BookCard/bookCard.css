@@ -1,0 +1,15 @@
+header h1 {
+  animation: textGlow 6s ease-in-out infinite;
+}
+
+.book-card {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.book-card.okundu {
+  background-color: #f8d7da; 
+}
+
+.book-card.okunmadi {
+  background-color: #d4edda; 
+}
